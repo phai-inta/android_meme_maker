@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:layout_height="match_parent"
+    tools:context=".CreateMemeActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_height="350dp" />
+    <TextView
+        android:id="@+id/caption"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp">
+        <TableRow>
+            <TextView
+                android:id="@+id/topText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:text="Top caption"/>
+            <EditText
+                android:id="@+id/inputTop"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:textSize="14sp"/>
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:id="@+id/bottomText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:text="Bottom caption"/>
+            <EditText
+                android:id="@+id/inputBottom"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:textSize="14sp"/>
+
+        </TableRow>
+    </TableLayout>
+
+    <Button
+        android:id="@+id/createButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Create" />
+</LinearLayout>

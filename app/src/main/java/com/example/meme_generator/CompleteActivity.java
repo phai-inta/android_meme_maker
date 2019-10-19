@@ -143,9 +143,7 @@ public class CompleteActivity extends AppCompatActivity {
             shareIntent.setDataAndType(uri, getContentResolver().getType(uri));
             shareIntent.putExtra(Intent.EXTRA_STREAM, uri);
             startActivity(Intent.createChooser(shareIntent, "Share your meme"));
-            Log.d( "debug share: ", "entered");
         }
-        Log.d( "debug share: ", "totally out");
     }
 
     /*

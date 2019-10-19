@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -119,6 +120,9 @@ public class HomepageActivity extends AppCompatActivity {
             //call the adapter
             adapter = new MemeAdapter(memes);
             recyclerView.setAdapter(adapter);
+        } else {
+            Toast.makeText(this.getApplicationContext(),
+                    String.format("Network error, please try again."), Toast.LENGTH_SHORT).show();
         }
     }
 }

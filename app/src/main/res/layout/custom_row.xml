@@ -10,27 +10,9 @@
 
     <ImageView
         android:id="@+id/meme_image"
-        android:layout_width="183dp"
+        android:layout_width="185dp"
         android:layout_height="167dp"
         android:scaleType="fitXY"
         app:srcCompat="@mipmap/ic_launcher_round" />
 
-    <!--<RelativeLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content">-->
-
-        <!--&lt;!&ndash;<TextView&ndash;&gt;-->
-        <!--&lt;!&ndash;android:id="@+id/meme_name"&ndash;&gt;-->
-        <!--&lt;!&ndash;android:layout_width="fill_parent"&ndash;&gt;-->
-        <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
-        <!--&lt;!&ndash;android:layout_alignParentLeft="true"&ndash;&gt;-->
-        <!--&lt;!&ndash;android:layout_marginTop="10dp"&ndash;&gt;-->
-        <!--&lt;!&ndash;android:fontFamily="serif"&ndash;&gt;-->
-        <!--&lt;!&ndash;android:gravity="center_vertical|left"&ndash;&gt;-->
-        <!--&lt;!&ndash;android:maxLines="2"&ndash;&gt;-->
-        <!--&lt;!&ndash;android:text="BookTitle"&ndash;&gt;-->
-        <!--&lt;!&ndash;android:textSize="10sp"&ndash;&gt;-->
-        <!--&lt;!&ndash;android:textStyle="bold" />&ndash;&gt;-->
-
-    <!--</RelativeLayout>-->
 </LinearLayout>

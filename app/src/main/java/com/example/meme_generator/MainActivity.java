@@ -4,18 +4,20 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
-    //private static int TIME_OUT = 4000;
     private Button startBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ImageView logo = findViewById(R.id.logo);
+        logo.setImageResource(R.drawable.logo);
 
         startBtn = findViewById(R.id.startBtn);
         startBtn.setOnClickListener(new View.OnClickListener() {
@@ -30,12 +32,4 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, HomepageActivity.class);
         startActivity(intent);
     }
-//        new Handler().postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//                Intent homeIntent = new Intent(MainActivity.this, HomepageActivity.class);
-//                startActivity(homeIntent);
-//                finish();
-//            }
-//        }, TIME_OUT);
 }

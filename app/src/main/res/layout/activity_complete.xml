@@ -1,25 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:gravity="center_horizontal"
+    android:background="#dfdfdf"
     android:layout_height="match_parent"
     tools:context=".CompleteActivity">
+
+    <ProgressBar
+        android:id="@+id/progress_horizontal"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="fill_parent"
+        android:layout_height="10dp"
+        android:progress="100"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Completed!"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-thin"
+        android:text="Completed!!"
+        android:textColor="#F70F0B0B"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
-    <ImageView
-        android:id="@+id/yourMeme"
+    <FrameLayout
+        android:id="@+id/memeFrag"
         android:layout_width="match_parent"
         android:layout_marginTop="20dp"
-        android:layout_height="350dp" />
+        android:layout_height="350dp">
+    </FrameLayout>
 
 </LinearLayout>

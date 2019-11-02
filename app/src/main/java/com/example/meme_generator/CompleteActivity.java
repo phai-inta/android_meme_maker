@@ -71,7 +71,7 @@ public class CompleteActivity extends AppCompatActivity {
         meme = getIntent().getParcelableExtra("customMeme");
 
         if (meme != null) {
-            //Log.d("debug received url: ", meme.getUrl() + ":" + meme.getName());
+            Log.d("debug received url: ", meme.getUrl() + " : " + meme.getName());
             url = meme.getUrl();
             FragmentManager fm = getSupportFragmentManager();
             FragmentTransaction transaction = fm.beginTransaction();

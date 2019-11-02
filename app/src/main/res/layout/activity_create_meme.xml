@@ -19,21 +19,31 @@
         android:layout_height="10dp"
         android:progress="100"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-thin"
+        android:text="Add your words"
+        android:textColor="#010114"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
     <ImageView
+        android:layout_marginTop="3dp"
         android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_marginTop="20dp"
         android:layout_height="350dp" />
 
     <TextView
         android:id="@+id/caption"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="3dp"
         android:fontFamily="sans-serif-thin"
         android:text="Add text"
         android:textColor="#010114"
-        android:textSize="24sp"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <TableLayout
@@ -41,7 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="10dp">
         <TableRow>
 
             <TextView
@@ -53,7 +63,7 @@
                 android:gravity="center"
                 android:text="Top caption"
                 android:textColor="#010114"
-                android:textSize="24sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
             <EditText
                 android:id="@+id/inputTop"
@@ -72,7 +82,7 @@
                 android:gravity="center"
                 android:text="Bottom caption"
                 android:textColor="#010114"
-                android:textSize="24sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
             <EditText
                 android:id="@+id/inputBottom"

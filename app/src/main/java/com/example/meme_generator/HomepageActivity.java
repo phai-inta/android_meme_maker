@@ -1,18 +1,20 @@
 package com.example.meme_generator;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -31,15 +33,17 @@ public class HomepageActivity extends AppCompatActivity {
     private ArrayList<Meme> memes;
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
-    private String memeUrl = "https://api.imgflip.com/get_memes/";
+    private String memeUrl = "https://api.imgflip.com/get_meme/";
     private ProgressBar spinner;
+    private Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
-        initialiseUI();
+        context = this;
         new RequestTask().execute();
+        initialiseUI();
     }
 
     private void initialiseUI() {
@@ -62,7 +66,7 @@ public class HomepageActivity extends AppCompatActivity {
 
             try {
                 URL url = new URL(memeUrl);
-                Log.d("debug: url ", memeUrl);
+                //Log.d("debug: url ", memeUrl);
                 connection = (HttpURLConnection) url.openConnection();
 
                 int code = connection.getResponseCode();
@@ -112,8 +116,9 @@ public class HomepageActivity extends AppCompatActivity {
     }
 
     private void displayMeme() {
-        if (memes.size() > 0) {
+        if (memes != null) {
             //set a layout
+            //Log.d("debug size: ", String.valueOf(memes.size()));
             spinner.setVisibility(View.GONE);
             recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
             recyclerView.setHasFixedSize(true);
@@ -121,8 +126,22 @@ public class HomepageActivity extends AppCompatActivity {
             adapter = new MemeAdapter(memes);
             recyclerView.setAdapter(adapter);
         } else {
-            Toast.makeText(this.getApplicationContext(),
-                    String.format("Network error, please try again."), Toast.LENGTH_SHORT).show();
+            spinner.setVisibility(View.INVISIBLE);
+            AlertDialog.Builder msg = new AlertDialog.Builder(this);
+            msg.setTitle("Network Error");
+            msg.setMessage("Please try again later, sorry.");
+            msg.setCancelable(true);
+            msg.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    Intent it = new Intent(context, MainActivity.class);
+                    context.startActivity(it);
+                }
+            });
+            AlertDialog alert = msg.create();
+            alert.show();
+            Button okBtn = alert.getButton(DialogInterface.BUTTON_POSITIVE);
+            okBtn.setTextColor(Color.BLUE);
         }
     }
 }

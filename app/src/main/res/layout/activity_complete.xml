@@ -24,15 +24,15 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:fontFamily="sans-serif-thin"
-        android:text="Completed!!"
-        android:textColor="#F70F0B0B"
-        android:textSize="30sp"
+        android:text="Well done!!"
+        android:textColor="#010114"
+        android:textSize="25sp"
         android:textStyle="bold" />
 
     <FrameLayout
+        android:layout_marginTop="3dp"
         android:id="@+id/memeFrag"
         android:layout_width="match_parent"
-        android:layout_marginTop="20dp"
         android:layout_height="350dp">
     </FrameLayout>
 

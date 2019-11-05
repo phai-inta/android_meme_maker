@@ -33,7 +33,7 @@ public class HomepageActivity extends AppCompatActivity {
     private ArrayList<Meme> memes;
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
-    private String memeUrl = "https://api.imgflip.com/get_meme/";
+    private String memeUrl = "https://api.imgflip.com/get_memes/";
     private ProgressBar spinner;
     private Context context;
 
